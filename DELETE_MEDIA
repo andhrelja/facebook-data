@@ -1,0 +1,11 @@
+import shutil 
+
+tbd = set()
+for folder in os.listdir('.'):
+    for fn in os.listdir(os.path.join('.', folder)):
+        f = os.path.join('.', folder, fn)
+        if os.path.isdir(f):
+            tbd.add(f)
+
+for fn in tbd:
+    shutil.rmtree(fn)
